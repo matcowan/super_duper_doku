@@ -171,7 +171,24 @@ function tableToArray(table) {
 }
 
 async function sendToBackend() {
+<<<<<<< HEAD
   // J'ai tout cassé, hehe
   alert("C'est cassé ! :(");
   // ! qui à fait ça ?
+=======
+  var array = tableToArray(".sudoku-container");
+  var res = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(array),
+  });
+
+  if ((await res.text()) === "true") {
+    alert("Gagné!");
+  } else {
+    alert("Perdu!");
+  }
+>>>>>>> parent of aa2ccfe (Juste un peu de ménage dans le code du site, je n'ai rien cassé)
 }
